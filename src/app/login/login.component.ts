@@ -48,6 +48,9 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
+    
+    console.log(this.submitted);
+    
     this.submitted = true;
 
     // stop here if form is invalid
@@ -64,6 +67,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate([this.returnUrl]);
         },
         (error) => {
+          alert("Thông tin đăng nhập chưa chính xác !")
           this.error = error;
           this.loading = false;   
         }
