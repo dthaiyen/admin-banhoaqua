@@ -47,6 +47,7 @@ export const mainRoutes: Routes = [
 ];
 @NgModule({
   declarations: [
+    DashboardComponent,
     SidebarComponent,
     FooterComponent,
     NavbarComponent,

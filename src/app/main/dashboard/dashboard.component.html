@@ -11,7 +11,26 @@
     <div class="row">
       <div class="col-xs-12">
         <!-- PAGE CONTENT BEGINS -->
-                    Bàn làm việc
+                  Sản phẩm 
+                  <table class="table">
+                    <thead>
+                      <tr>
+                       
+                        <th scope="col">Teen san pham</th>
+                        <th scope="col">xuat xu</th>
+                        <th scope="col">gia</th>
+                        <th scope="col">so luowng</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let tk of saphet">
+                        <th scope="row">{{tk.tensp}}</th>
+                        <td>{{tk.xuatxu}}</td>
+                        <td>{{tk.gia}}</td>
+                        <td>{{tk.soluong}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
         <!-- PAGE CONTENT ENDS -->
       </div><!-- /.col -->
     </div><!-- /.row -->

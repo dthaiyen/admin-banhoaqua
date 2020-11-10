@@ -4,6 +4,7 @@ import { FileUpload } from 'primeng/fileupload';
 import { FormBuilder, Validators } from '@angular/forms';
 import { BaseComponent } from '../../../lib/base-component';
 import 'rxjs/add/operator/takeUntil';
+import { ActivatedRoute } from '@angular/router';
 declare var $: any;
 @Component({
   selector: 'app-product',
@@ -24,7 +25,7 @@ export class ProductComponent extends BaseComponent implements OnInit {
   public isCreate: any;
   submitted = false;
   @ViewChild(FileUpload, { static: false }) file_image: FileUpload;
-  constructor(private fb: FormBuilder, injector: Injector) {
+  constructor(private fb: FormBuilder, injector: Injector, private ac:ActivatedRoute) {
     super(injector);
   }
 
@@ -32,11 +33,12 @@ export class ProductComponent extends BaseComponent implements OnInit {
     this.formsearch = this.fb.group({
       'tensp': [''],
     });
+    debugger
     this.search();
   }
 
   loadPage(page) {
-    //debugger;
+    // debugger;
     this._api.post('/api/item/get_san_pham_search', { page: page, pageSize: this.pageSize }).takeUntil(this.unsubscribe).subscribe(res => {
       this.items = res.data;
       this.totalRecords = res.totalItems;
@@ -48,7 +50,7 @@ export class ProductComponent extends BaseComponent implements OnInit {
     // debugger;
     this.page = 1;
     this.pageSize = 5;
-    this._api.post('/api/item/get_san_pham_search', { page: this.page, pageSize: this.pageSize, tensp: this.formsearch.get('tensp').value }).takeUntil(this.unsubscribe).subscribe(res => {
+    this._api.post('/api/item/get_san_pham_admin', { page: this.page, pageSize: this.pageSize, tensp: this.formsearch.get('tensp').value }).takeUntil(this.unsubscribe).subscribe(res => {
       this.items = res.data;
       this.totalRecords = res.totalItems;
       this.pageSize = res.pageSize;
