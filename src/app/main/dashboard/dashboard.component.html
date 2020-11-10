@@ -11,19 +11,61 @@
     <div class="row">
       <div class="col-xs-12">
         <!-- PAGE CONTENT BEGINS -->
-                  Sản phẩm 
-                  <table class="table">
+                  <h2>Sản phẩm sắp hết</h2>
+                  <table class="table table-bordered">
                     <thead>
                       <tr>
                        
-                        <th scope="col">Teen san pham</th>
-                        <th scope="col">xuat xu</th>
-                        <th scope="col">gia</th>
-                        <th scope="col">so luowng</th>
+                        <th scope="col">Tên sản phẩm</th>
+                        <th scope="col">Xuất xứ</th>
+                        <th scope="col">Giá sản phẩm</th>
+                        <th scope="col">Số lượng hiện có</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr *ngFor="let tk of saphet">
+                        <th scope="row">{{tk.tensp}}</th>
+                        <td>{{tk.xuatxu}}</td>
+                        <td>{{tk.gia}}</td>
+                        <td>{{tk.soluong}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <h2>Sản phẩm tồn nhiều</h2>
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                       
+                        <th scope="col">Tên sản phẩm</th>
+                        <th scope="col">Xuất xứ</th>
+                        <th scope="col">Giá sản phẩm</th>
+                        <th scope="col">Số lượng hiện có</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let tk of tonkho">
+                        <th scope="row">{{tk.tensp}}</th>
+                        <td>{{tk.xuatxu}}</td>
+                        <td>{{tk.gia}}</td>
+                        <td>{{tk.soluong}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <h2>Sản phẩm đã hết</h2>
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                       
+                        <th scope="col">Tên sản phẩm</th>
+                        <th scope="col">Xuất xứ</th>
+                        <th scope="col">Giá sản phẩm</th>
+                        <th scope="col">Số lượng hiện có</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let tk of het">
                         <th scope="row">{{tk.tensp}}</th>
                         <td>{{tk.xuatxu}}</td>
                         <td>{{tk.gia}}</td>
